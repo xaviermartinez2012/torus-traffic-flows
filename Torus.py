@@ -38,17 +38,21 @@ class Torus:
         self.graph.add_nodes_from(range(0, self.size), h_queue=0, v_queue=0, h_g_time=0, v_g_time=0)
         self.create_graph()
         self.initialize()
-
+    
+    # Method to initialize the shifts, queues and apply the green times
     def initialize(self):
         for x in xrange(0, self.size):
             self.shifts.append(0)
         self.assign_queues()
         self.apply_green_time()
-
+    
+    # Method to reset the shifts to 0
     def reset_shifts(self):
         for x in xrange(0, self.size):
             self.shifts[x] = 0
-
+    
+    # Method used by "initialize" to assign queues to the nodes
+    # This method relies on the method "agents"
     def assign_queues(self):
         h_queues = []
         for x in xrange(0, self.n):
