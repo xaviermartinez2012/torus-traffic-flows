@@ -18,7 +18,8 @@ class Torus:
         assert type(k) is int, "k=%r is not an int value" % k
         assert type(psi) is int, "psi=%r is not an int value" % psi
         assert ((psi % 2) == 0), "psi=%r is not even" % psi
-
+        
+        # Generate a seed to keep all values the same while testing.
         random.seed(8)
 
         self.n = n
